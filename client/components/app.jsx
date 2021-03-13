@@ -1,11 +1,16 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React, { Component } from 'react'
+import styled from 'styled-components'
+import HomePage from './homepage'
+import Footer from './UI/footer'
+import Header from './UI/header'
 
 export default class App extends Component {
   render() {
     return (
       <Container>
-        <h1>Fountain of Ink Header</h1>
+        <Header />
+        <HomePage />
+        <Footer />
       </Container>
     )
   }
