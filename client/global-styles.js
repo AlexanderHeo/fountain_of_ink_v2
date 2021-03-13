@@ -72,6 +72,11 @@ const GlobalStyle = createGlobalStyle`
   --teal-8: #0C6B58;
   --teal-9: #014D40;
 	}
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
 `
 
 const GS = ({ children }) => (
