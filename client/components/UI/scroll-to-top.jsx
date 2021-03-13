@@ -31,10 +31,10 @@ class ScrollToTop extends Component {
 	render() {
 	  const { isVisible } = this.state
 	  return (
-	    <div className='scroll-to-top'>
+	    <div>
 	      {
 	        isVisible && (
-	          <Arrow onClick={() => this.scrollToTop()}>
+	          <Arrow className='scroll-to-top' onClick={() => this.scrollToTop()}>
 	            <div className='top' />
 	            <div className='post' />
 	          </Arrow>
