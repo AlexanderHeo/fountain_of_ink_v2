@@ -20,9 +20,17 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             plugins: [
-              '@babel/plugin-transform-react-jsx'
+              '@babel/plugin-transform-react-jsx',
+              '@babel/plugin-proposal-class-properties'
             ]
           }
+        }
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]'
         }
       }
     ]

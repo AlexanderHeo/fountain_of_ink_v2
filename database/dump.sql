@@ -60,6 +60,18 @@ CREATE TABLE "accessories" (
 
 
 
+CREATE TABLE "homepage" (
+	"category" json NOT NULL,
+	"arrival" json NOT NULL,
+	"staff" json NOT NULL,
+	"popular" json NOT NULL
+) WITH (
+  OIDS=FALSE
+);
+
+
+
+
 
 
 

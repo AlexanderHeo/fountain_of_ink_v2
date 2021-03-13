@@ -1,25 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react'
+import styled from 'styled-components'
+import HomePage from './homepage'
+import Footer from './UI/footer'
+import Header from './UI/header'
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      message: null,
-      isLoading: true
-    };
-  }
-
-  componentDidMount() {
-    fetch('/api/health-check')
-      .then(res => res.json())
-      .then(data => this.setState({ message: data.message || data.error }))
-      .catch(err => this.setState({ message: err.message }))
-      .finally(() => this.setState({ isLoading: false }));
-  }
-
+export default class App extends Component {
   render() {
-    return this.state.isLoading
-      ? <h1>Testing connections...</h1>
-      : <h1>{ this.state.message.toUpperCase() }</h1>;
+    return (
+      <Container>
+        <Header />
+        <HomePage />
+        <Footer />
+      </Container>
+    )
   }
 }
+
+const Container = styled.div`
+	width: 100%;
+	height: 100%;
+`
