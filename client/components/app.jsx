@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
 import HomePage from './homepage'
-import Product from './product/product'
+import Accessories from './product/accessories'
+import FountainPens from './product/fountainpens'
+import Inks from './product/inks'
+import Paper from './product/paper'
 import Footer from './UI/footer'
 import Header from './UI/header'
 import Scroll from './UI/scroll-to-top'
@@ -14,9 +17,13 @@ export default class App extends Component {
         <Container>
           <Header />
           <Switch>
-            <Route path='/' exact component={HomePage} />
-            <Route path='/product' exact component={Product} />
+            <Route path='/home' component={HomePage} />
+            <Route path='/fountainpens' exact component={FountainPens} />
+            <Route path='/inks' exact component={Inks} />
+            <Route path='/paper' exact component={Paper} />
+            <Route path='/accessories' exact component={Accessories} />
           </Switch>
+          <Redirect from='/' to='/home' />
           <Footer />
           <Scroll />
         </Container>
