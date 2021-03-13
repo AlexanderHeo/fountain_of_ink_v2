@@ -5,7 +5,6 @@ import Section from './homepage/section'
 
 class HomePage extends Component {
   render() {
-
     let buttonOneProps = {
       button: 'Fountain Pens',
       title: '',
@@ -95,6 +94,13 @@ const Container = styled.div`
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+	.image-section:hover {
+		cursor: pointer;
+	}
+	.image-section:hover .image-title {
+		background-color: rgba(0, 0, 0, 0.8);
+		color: white;
 	}
 	.image {
 		width: 100%;
