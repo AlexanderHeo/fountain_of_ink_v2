@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Sample from '../../server/public/images/samplepic.jpg'
+import Picture from '../../server/public/images/samplepic.jpg'
 import Section from './homepage/section'
 
 class HomePage extends Component {
@@ -96,25 +96,25 @@ class HomePage extends Component {
 	  return (
 	    <Container className={this.state.mounted ? 'container mount' : 'container' }>
 	      <Section
-	        imgSrc={Sample}
+	        imgSrc={Picture}
 	        imgTitle='Fountain Pens'
 	        title='Category'
 	        button={CATEGORY}
 	      />
 	      <Section
-	        imgSrc={Sample}
+	        imgSrc={Picture}
 	        imgTitle='Inks'
 	        title='New Arrival'
 	        button={ARRIVAL}
 	      />
 	      <Section
-	        imgSrc={Sample}
+	        imgSrc={Picture}
 	        imgTitle='Paper'
 	        title='Staff Picks'
 	        button={STAFFPICKS}
 	      />
 	      <Section
-	        imgSrc={Sample}
+	        imgSrc={Picture}
 	        imgTitle='Accessories'
 	        title='Most Popular'
 	        button={STAFFPICKS}

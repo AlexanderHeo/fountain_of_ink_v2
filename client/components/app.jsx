@@ -34,7 +34,7 @@ export default class App extends Component {
 
 	render() {
 	  return (
-	    <Router>
+	    <Router basename='/' >
 	      <Container>
 	        <Header />
 	        <NavBar isVisible={this.state.isVisible} />

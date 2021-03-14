@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Button from './button'
 
-const ButtonsModule = ({ button, title }) => {
+const ButtonsModule = ({ button, title, imgSrc }) => {
   const { buttonOneProps, buttonTwoProps, buttonThreeProps, buttonFourProps } = button
 
   return (
@@ -11,10 +11,22 @@ const ButtonsModule = ({ button, title }) => {
         <span className='title'>{title}</span>
       </div>
       <div className='links'>
-        <Button button={buttonOneProps} />
-        <Button button={buttonTwoProps} />
-        <Button button={buttonThreeProps} />
-        <Button button={buttonFourProps} />
+        <Button
+          button={buttonOneProps}
+          imgSrc={imgSrc}
+        />
+        <Button
+          button={buttonTwoProps}
+          imgSrc={imgSrc}
+        />
+        <Button
+          button={buttonThreeProps}
+          imgSrc={imgSrc}
+        />
+        <Button
+          button={buttonFourProps}
+          imgSrc={imgSrc}
+        />
       </div>
     </Module>
   )

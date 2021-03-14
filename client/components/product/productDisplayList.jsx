@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Sample from '../../../server/public/images/samplepic.jpg'
+import Picture from '../../../server/public/images/samplepic.jpg'
 
 class ProductDisplay extends Component {
 	state = {
@@ -18,13 +18,9 @@ class ProductDisplay extends Component {
 	  return (
 	    <Container className={this.state.mounted ? 'container mount' : 'container'}>
 	      <div className='product-image-container'>
-	        <img className='product-image' src={Sample} />
+	        <img className='product-image' src={`/${Picture}`} />
 	        <div className='product-image-button-container'>
-	          <div className='product-image-button-text'>Button Text</div>
-	          <div className='product-image-button-description'>{this.props.match.params.category}</div>
-	          <div className='product-image-button-description'>{this.props.match.params.category}</div>
-	          <div className='product-image-button-description'>{this.props.match.params.category}</div>
-	          <button className='product-image-buttonbutton'>Button</button>
+	          <div className='product-image-button-text'>{this.props.match.params.category}</div>
 	        </div>
 	      </div>
 	    </Container>
@@ -35,5 +31,26 @@ class ProductDisplay extends Component {
 export default ProductDisplay
 
 const Container = styled.div`
-	position: initial;
+	width: 100%;
+	height: 100%;
+	.product-image-container {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.product-image {
+		width: 100%;
+	}
+	.product-image-button-container {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		flex-flow: column;
+		background-color: rgba(255, 255, 255, 0.7);
+		padding: 3rem 0;
+	}
+	.product-image-button-text {
+		font-size: 2.3rem;
+	}
 `

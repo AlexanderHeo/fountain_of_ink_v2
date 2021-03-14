@@ -1,9 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Button = ({ button }) => (
+const Button = ({ button, imgSrc }) => (
 
-  <Link to={`/${button.linkTo}`} className='section-button-container one'>
+  <Link to={{
+    pathname: `/${button.linkTo}`,
+    state: imgSrc
+  }} className='section-button-container one'>
     <div className='section-button' />
     {
       button.title

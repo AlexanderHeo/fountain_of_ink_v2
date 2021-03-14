@@ -22,7 +22,8 @@ const Section = ({ imgSrc, imgTitle, title, button, handleClick }) => {
     <section className='section'>
       <Link className='image-section' to={{
         pathname: path,
-        state: imgTitle
+        state: imgTitle,
+        imgSrc: imgSrc
       }} >
         <img className='image' src={imgSrc} />
         <span className='image-title'>{imgTitle}</span>
@@ -30,6 +31,7 @@ const Section = ({ imgSrc, imgTitle, title, button, handleClick }) => {
       <ButtonsModule
         button={button}
         title={title}
+        imgSrc={imgSrc}
       />
     </section>
   )
