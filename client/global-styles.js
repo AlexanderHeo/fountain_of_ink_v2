@@ -77,6 +77,14 @@ const GlobalStyle = createGlobalStyle`
 		margin: 0;
 		padding: 0;
 	}
+	a {
+		color: black;
+		text-decoration: none;
+	}
+	a:visited {
+		color: black;
+		text-decoration: none;
+	}
 `
 
 const GS = ({ children }) => (

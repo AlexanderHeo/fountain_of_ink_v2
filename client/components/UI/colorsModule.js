@@ -9,51 +9,51 @@ const ColorsModule = () => (
     <div className='links'>
       <div className='color-button-container'>
         <button className='color-button black' />
-        <span>black</span>
+        <div className='color-name'>black</div>
       </div>
       <div className='color-button-container'>
         <button className='color-button blue' />
-        <span>blue</span>
+        <div className='color-name'>blue</div>
       </div>
       <div className='color-button-container'>
         <button className='color-button brown' />
-        <span>brown</span>
+        <div className='color-name'>brown</div>
       </div>
       <div className='color-button-container'>
         <button className='color-button green' />
-        <span>green</span>
+        <div className='color-name'>green</div>
       </div>
       <div className='color-button-container'>
         <button className='color-button gray' />
-        <span>gray</span>
+        <div className='color-name'>gray</div>
       </div>
       <div className='color-button-container'>
         <button className='color-button orange' />
-        <span>orange</span>
+        <div className='color-name'>orange</div>
       </div>
       <div className='color-button-container'>
         <button className='color-button pink' />
-        <span>pink</span>
+        <div className='color-name'>pink</div>
       </div>
       <div className='color-button-container'>
         <button className='color-button purple' />
-        <span>purple</span>
+        <div className='color-name'>purple</div>
       </div>
       <div className='color-button-container'>
         <button className='color-button red' />
-        <span>red</span>
+        <div className='color-name'>red</div>
       </div>
       <div className='color-button-container'>
         <button className='color-button turqoise' />
-        <span>turqoise</span>
+        <div className='color-name'>turqoise</div>
       </div>
       <div className='color-button-container'>
         <button className='color-button yellow' />
-        <span>yellow</span>
+        <div className='color-name'>yellow</div>
       </div>
       <div className='color-button-container'>
         <button className='color-button white' />
-        <span>white</span>
+        <div className='color-name'>white</div>
       </div>
     </div>
   </Module>
@@ -86,6 +86,9 @@ const Module = styled.div`
 		height: calc(100vw * 0.13);
 		border: 0;
 		border-radius: 0.3rem;
+	}
+	.color-name {
+		text-align: center;
 	}
 	.black {
 		background-color: black;

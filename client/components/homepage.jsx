@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Sample from '../../server/public/images/samplepic.jpg'
+import Picture from '../../server/public/images/samplepic.jpg'
 import Section from './homepage/section'
 
 class HomePage extends Component {
@@ -32,6 +32,7 @@ class HomePage extends Component {
 	    linkTo: 'accessories'
 	  }
 	  const CATEGORY = { buttonOneProps, buttonTwoProps, buttonThreeProps, buttonFourProps }
+
 	  buttonOneProps = {
 	    button: 'Pen',
 	    title: 'Pilot',
@@ -44,49 +45,79 @@ class HomePage extends Component {
 	    title: 'Diamine',
 	    description: 'Oxblood',
 	    price: '12',
-	    linkTo: 'inks'
+	    linkTo: 'inks/diamineoxblood'
 	  }
 	  buttonThreeProps = {
 	    button: 'Pen',
 	    title: 'Moonman',
 	    description: 'Demonstrator',
 	    price: '16',
-	    linkTo: 'fountainpens'
+	    linkTo: 'fountainpens/moonman'
 	  }
 	  buttonFourProps = {
 	    button: 'Paper',
 	    title: 'Loosesheets',
 	    description: 'Best loosesheets',
 	    price: '5',
-	    linkTo: 'fountainpens'
+	    linkTo: 'paper/loosesheets'
 	  }
 	  const ARRIVAL = { buttonOneProps, buttonTwoProps, buttonThreeProps, buttonFourProps }
+
+	  buttonOneProps = {
+	    button: 'Pen',
+	    title: 'Pilot - VP',
+	    description: 'Clickable fountain pen',
+	    price: '160',
+	    linkTo: 'fountainpens/vp'
+	  }
+	  buttonTwoProps = {
+	    button: 'Ink',
+	    title: 'Diamine',
+	    description: 'Aurora Borealis',
+	    price: '14',
+	    linkTo: 'inks/auroraborealis'
+	  }
+	  buttonThreeProps = {
+	    button: 'Accessories',
+	    title: 'Travel Ink Bottles',
+	    description: 'Small travel bottles',
+	    price: '10',
+	    linkTo: 'accessories/travelbottles'
+	  }
+	  buttonFourProps = {
+	    button: 'Pen',
+	    title: 'Lamy Safari',
+	    description: 'Pikachu Editon',
+	    price: '200',
+	    linkTo: 'fountainpens/pikachu'
+	  }
+	  const STAFFPICKS = { buttonOneProps, buttonTwoProps, buttonThreeProps, buttonFourProps }
 
 	  return (
 	    <Container className={this.state.mounted ? 'container mount' : 'container' }>
 	      <Section
-	        imgSrc={Sample}
+	        imgSrc={Picture}
 	        imgTitle='Fountain Pens'
 	        title='Category'
 	        button={CATEGORY}
 	      />
 	      <Section
-	        imgSrc={Sample}
+	        imgSrc={Picture}
 	        imgTitle='Inks'
 	        title='New Arrival'
 	        button={ARRIVAL}
 	      />
 	      <Section
-	        imgSrc={Sample}
+	        imgSrc={Picture}
 	        imgTitle='Paper'
 	        title='Staff Picks'
-	        button={ARRIVAL}
+	        button={STAFFPICKS}
 	      />
 	      <Section
-	        imgSrc={Sample}
+	        imgSrc={Picture}
 	        imgTitle='Accessories'
 	        title='Most Popular'
-	        button={ARRIVAL}
+	        button={STAFFPICKS}
 	      />
 	    </Container>
 	  )
@@ -109,6 +140,9 @@ const Container = styled.div`
 		background-color: rgba(0, 0, 0, 0.8);
 		color: white;
 		transform: scale(1.05);
+	}
+	.image-section:visited {
+		color: black;
 	}
 	.image {
 		width: 100%;

@@ -6,6 +6,7 @@ import Accessories from './product/accessories'
 import FountainPens from './product/fountainpens'
 import Inks from './product/inks'
 import Paper from './product/paper'
+import Product from './product/productDisplayList'
 import Footer from './UI/footer'
 import Header from './UI/header'
 import NavBar from './UI/navBar'
@@ -33,7 +34,7 @@ export default class App extends Component {
 
 	render() {
 	  return (
-	    <Router>
+	    <Router basename='/' >
 	      <Container>
 	        <Header />
 	        <NavBar isVisible={this.state.isVisible} />
@@ -43,6 +44,10 @@ export default class App extends Component {
 	          <Route path='/inks' exact component={Inks} />
 	          <Route path='/paper' exact component={Paper} />
 	          <Route path='/accessories' exact component={Accessories} />
+	          <Route path='/fountainpens/:category' render={props => <Product {...props}/>} />
+	          <Route path='/inks/:category' render={props => <Product {...props}/>} />
+	          <Route path='/paper/:category' render={props => <Product {...props}/>} />
+	          <Route path='/accessories/:category' render={props => <Product {...props}/>} />
 	        </Switch>
 	        <Redirect from='/' to='/home' />
 	        <Footer />
