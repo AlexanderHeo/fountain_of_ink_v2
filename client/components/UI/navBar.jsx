@@ -30,9 +30,7 @@ class Navbar extends Component {
 export default Navbar
 
 const Nav = styled.div`
-	padding: 6px 0;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
+	padding: 12px;
 	background-color: #fff;
 	.ul {
 		display: flex;

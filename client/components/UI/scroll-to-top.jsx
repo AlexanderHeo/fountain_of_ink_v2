@@ -51,22 +51,23 @@ export default ScrollToTop
 const Arrow = styled.div`
 	width: 100%;
 	height: 100%;
-	border: 7px double var(--teal-5);
+	border: 7px double rgba(0, 0, 0, 0.5);
 	border-radius: 12px;
 	display: flex;
 	flex-flow: column;
 	justify-content: center;
 	align-items: center;
+	cursor: pointer;
 	.top {
 		width: 0;
 		height: 0;
 		border-left: 12px solid transparent;
 		border-right: 12px solid transparent;
-		border-bottom: 12px solid var(--teal-4);
+		border-bottom: 12px solid rgba(0, 0, 0, 0.5);
 	}
 	.post {
 		width: 10px;
 		height: 25px;
-		background-color: var(--teal-4);
+		background-color: rgba(0, 0, 0, 0.5);
 	}
 `

@@ -14,5 +14,5 @@ export default Footer
 const Container = styled.div`
 	text-align: center;
 	padding: 100px 0;
-	/* border: 1px solid blue; */
+	background-color: rgb(240, 240, 240);
 `
