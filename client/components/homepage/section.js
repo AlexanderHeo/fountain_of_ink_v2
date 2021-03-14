@@ -1,22 +1,36 @@
 import React from 'react'
-import SectionButton from './section-button'
+import { Link } from 'react-router-dom'
+import ButtonsModule from '../UI/buttonsModule'
 
-const Section = ({ imgSrc, title, category }) => {
-  const { categoryButtonOneProps, categoryButtonTwoProps, categoryButtonThreeProps, categoryButtonFourProps } = category
+const Section = ({ imgSrc, imgTitle, title, button, handleClick }) => {
+  let path
+  switch (imgTitle) {
+    case 'Fountain Pens':
+      path = '/fountainpens'
+      break
+    case 'Inks':
+      path = '/inks'
+      break
+    case 'Paper':
+      path = '/paper'
+      break
+    case 'Accessories':
+      path = '/accessories'
+      break
+  }
   return (
-    <section>
-      <img className='image' src={imgSrc} />
-      <div>
-        <div className='titleContainer'>
-          <span className='title'>{title}</span>
-        </div>
-        <div className='links'>
-          <SectionButton button={categoryButtonOneProps} />
-          <SectionButton button={categoryButtonTwoProps} />
-          <SectionButton button={categoryButtonThreeProps} />
-          <SectionButton button={categoryButtonFourProps} />
-        </div>
-      </div>
+    <section className='section'>
+      <Link className='image-section' to={{
+        pathname: path,
+        state: imgTitle
+      }} >
+        <img className='image' src={imgSrc} />
+        <span className='image-title'>{imgTitle}</span>
+      </Link>
+      <ButtonsModule
+        button={button}
+        title={title}
+      />
     </section>
   )
 }

@@ -14,5 +14,5 @@ export default Header
 const Container = styled.div`
 	text-align: center;
 	padding: 30px 0;
-	border: 1px solid green;
+	/* border: 1px solid green; */
 `
