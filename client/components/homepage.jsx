@@ -4,6 +4,7 @@ import Sample from '../../server/public/images/samplepic.jpg'
 import Section from './homepage/section'
 
 class HomePage extends Component {
+
   render() {
     let buttonOneProps = {
       button: 'Fountain Pens',
@@ -26,25 +27,29 @@ class HomePage extends Component {
       button: 'Pen',
       title: 'Pilot',
       description: 'Falcon',
-      price: '100'
+      price: '100',
+      linkTo: 'fountainpens'
     }
     buttonTwoProps = {
       button: 'Ink',
       title: 'Diamine',
       description: 'Oxblood',
-      price: '12'
+      price: '12',
+      linkTo: 'inks'
     }
     buttonThreeProps = {
       button: 'Pen',
       title: 'Moonman',
       description: 'Demonstrator',
-      price: '16'
+      price: '16',
+      linkTo: 'fountainpens'
     }
     buttonFourProps = {
       button: 'Paper',
       title: 'Loosesheets',
       description: 'Best loosesheets',
-      price: '5'
+      price: '5',
+      linkTo: 'fountainpens'
     }
     const ARRIVAL = { buttonOneProps, buttonTwoProps, buttonThreeProps, buttonFourProps }
     return (
@@ -93,6 +98,7 @@ const Container = styled.div`
 	.image-section:hover .image-title {
 		background-color: rgba(0, 0, 0, 0.8);
 		color: white;
+		transform: scale(1.05);
 	}
 	.image {
 		width: 100%;
@@ -107,6 +113,7 @@ const Container = styled.div`
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		transition: 0.2s ease-in;
 	}
 
 `

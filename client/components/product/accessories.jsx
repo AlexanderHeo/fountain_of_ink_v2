@@ -3,12 +3,13 @@ import styled from 'styled-components'
 import Sample from '../../../server/public/images/samplepic.jpg'
 import ButtonsModule from '../UI/buttonsModule'
 
-class Product extends Component {
+class Accessories extends Component {
 	state = {
 	  data: ''
 	}
 
 	componentDidMount = () => {
+	  window.scrollTo(0, 0)
 	  const category = this.props.location.state
 	  this.setState({ date: category })
 	}
@@ -41,7 +42,7 @@ class Product extends Component {
 	}
 }
 
-export default Product
+export default Accessories
 
 const Container = styled.div`
 	width: 100%;

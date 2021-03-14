@@ -37,6 +37,11 @@ const Module = styled.div`
 		width: calc(100vw * 0.195);
 		height: calc(100vw * 0.195);
 		margin: 0 6px;
+		transition: 0.2s ease-out;
+	}
+	.section-button-container:hover {
+		cursor: pointer;
+		transform: translateY(-10px);
 	}
 	.section-button {
 		width: 100%;

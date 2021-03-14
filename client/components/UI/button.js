@@ -2,8 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Button = ({ button }) => (
-  <Link to={`/${button.linkTo}`} className='section-button-container one'>
-    <button className='section-button' />
+  <div className='section-button-container one'>
+    <Link to={`/${button.linkTo}`}>
+      <div className='section-button' />
+    </Link>
     {
       button.title
         ? <>
@@ -13,7 +15,7 @@ const Button = ({ button }) => (
         </>
         : <span>{button.button}</span>
     }
-  </Link>
+  </div>
 )
 
 export default Button
