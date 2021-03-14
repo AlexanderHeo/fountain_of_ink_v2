@@ -110,32 +110,11 @@ const Container = styled.div`
 		height: 50%;
 		position: absolute;
 		background-color: rgba(255, 255, 255, 0.7);
-		border-radius: 3px;
+		border-radius: 0.3rem;
 		font-size: 2rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
-	.titleContainer {
-		padding: 68px 0;
-		text-align: center;
-		font-size: 1.7rem;
-	}
-	.links {
-		display: flex;
-		justify-content: center;
-		padding: 0 12px 130px 12px;
-	}
-	.section-button-container {
-		width: calc(100vw * 0.195);
-		height: calc(100vw * 0.195);
-		margin: 0 6px;
-	}
-	.section-button {
-		width: 100%;
-		height: 100%;
-		background-image: url('../../server/public/images/samplepic.jpg');
-		background-position: center;
-		background-size: cover;
-	}
+
 `

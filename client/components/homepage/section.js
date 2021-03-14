@@ -1,9 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import SectionButton from './section-button'
+import ButtonsModule from '../UI/buttonsModule'
 
 const Section = ({ imgSrc, imgTitle, title, button, handleClick }) => {
-  const { buttonOneProps, buttonTwoProps, buttonThreeProps, buttonFourProps } = button
   let path
   switch (imgTitle) {
     case 'Fountain Pens':
@@ -28,17 +27,10 @@ const Section = ({ imgSrc, imgTitle, title, button, handleClick }) => {
         <img className='image' src={imgSrc} />
         <span className='image-title'>{imgTitle}</span>
       </Link>
-      <div>
-        <div className='titleContainer'>
-          <span className='title'>{title}</span>
-        </div>
-        <div className='links'>
-          <SectionButton button={buttonOneProps} />
-          <SectionButton button={buttonTwoProps} />
-          <SectionButton button={buttonThreeProps} />
-          <SectionButton button={buttonFourProps} />
-        </div>
-      </div>
+      <ButtonsModule
+        button={button}
+        title={title}
+      />
     </section>
   )
 }
