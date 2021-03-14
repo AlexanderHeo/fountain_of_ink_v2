@@ -38,10 +38,28 @@ const Module = styled.div`
 		height: calc(100vw * 0.195);
 		margin: 0 6px;
 		transition: 0.2s ease-out;
+		position: relative;
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		align-items: center;
+		transition: transform 0.3s ease-in;
 	}
 	.section-button-container:hover {
 		cursor: pointer;
 		transform: translateY(-10px);
+	}
+	.section-button-container:hover .button-text {
+		background-color: rgb(20, 20, 20);
+		color: rgb(240, 240, 240);
+	}
+	.section-button-container:hover .button-overlay {
+		background-color: rgb(20, 20, 20);
+		color: rgb(240, 240, 240);
+		transform: scale(1.1)
+	}
+	.section-button-container .button-text {
+		text-align: center;
 	}
 	.section-button {
 		width: 100%;
@@ -49,5 +67,16 @@ const Module = styled.div`
 		background-image: url('../../../server/public/images/samplepic.jpg');
 		background-position: center;
 		background-size: cover;
+	}
+	.button-text {
+		width: 100%;
+		pointer-events: none;
+	}
+	.button-overlay {
+		position: absolute;
+		padding: 10%;
+		border-radius: 0.2rem;
+		background-color: rgba(240, 240, 240, 0.7);
+		pointer-events: none;
 	}
 `
