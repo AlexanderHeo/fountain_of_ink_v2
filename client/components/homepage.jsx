@@ -110,6 +110,9 @@ const Container = styled.div`
 		color: white;
 		transform: scale(1.05);
 	}
+	.image-section:visited {
+		color: black;
+	}
 	.image {
 		width: 100%;
 	}
