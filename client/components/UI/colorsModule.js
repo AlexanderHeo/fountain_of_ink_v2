@@ -83,7 +83,7 @@ const Module = styled.div`
 	}
 	.color-button {
 		width: 100%;
-		height: 100%;
+		height: calc(100vw * 0.13);
 		border: 0;
 		border-radius: 0.3rem;
 	}

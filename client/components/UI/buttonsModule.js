@@ -31,7 +31,7 @@ const Module = styled.div`
 	.links {
 		display: flex;
 		justify-content: center;
-		padding: 0 1rem 5rem 1rem;
+		padding: 0 1rem 10rem 1rem;
 	}
 	.section-button-container {
 		width: calc(100vw * 0.195);

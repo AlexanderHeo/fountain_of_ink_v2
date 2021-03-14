@@ -7,27 +7,19 @@ class HomePage extends Component {
   render() {
     let buttonOneProps = {
       button: 'Fountain Pens',
-      title: '',
-      description: '',
-      price: ''
+      linkTo: 'fountainpens'
     }
     let buttonTwoProps = {
       button: 'Ink',
-      title: '',
-      description: '',
-      price: ''
+      linkTo: 'inks'
     }
     let buttonThreeProps = {
       button: 'Paper',
-      title: '',
-      description: '',
-      price: ''
+      linkTo: 'paper'
     }
     let buttonFourProps = {
       button: 'Accessories',
-      title: '',
-      description: '',
-      price: ''
+      linkTo: 'accessories'
     }
     const CATEGORY = { buttonOneProps, buttonTwoProps, buttonThreeProps, buttonFourProps }
     buttonOneProps = {

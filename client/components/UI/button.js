@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Button = ({ button }) => (
-  <div className='section-button-container one'>
+  <Link to={`/${button.linkTo}`} className='section-button-container one'>
     <button className='section-button' />
     {
       button.title
@@ -12,7 +13,7 @@ const Button = ({ button }) => (
         </>
         : <span>{button.button}</span>
     }
-  </div>
+  </Link>
 )
 
 export default Button
