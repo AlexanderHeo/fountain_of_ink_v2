@@ -5,13 +5,14 @@ import ButtonsModule from '../UI/buttonsModule'
 
 class Paper extends Component {
 	state = {
-	  data: ''
+	  mounted: false
 	}
 
 	componentDidMount = () => {
 	  window.scrollTo(0, 0)
-	  const category = this.props.location.state
-	  this.setState({ date: category })
+	  setTimeout(() => {
+	    this.setState({ mounted: true })
+	  }, 0)
 	}
 
 	render() {
@@ -21,7 +22,7 @@ class Paper extends Component {
 	  const buttonFourProps = { button: 'Accessories' }
 	  const button = { buttonOneProps, buttonTwoProps, buttonThreeProps, buttonFourProps }
 	  return (
-	    <Container>
+	    <Container className={this.state.mounted ? 'container mount' : 'container'}>
 	      <div className='product-image-container'>
 	      	<img className='product-image' src={Sample} />
 	        <div className='product-image-button-container'>

@@ -42,4 +42,17 @@ const Container = styled.div`
 		bottom: 30px;
 		right: 20px;
 	}
+	.container {
+		transform: translateY(10px);
+		opacity: 0.5
+	}
+	.container.mount {
+		animation: containerMount 0.4s ease-in forwards;
+	}
+	@keyframes containerMount {
+		to {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
 `
