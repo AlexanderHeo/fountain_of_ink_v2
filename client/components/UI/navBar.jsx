@@ -43,17 +43,12 @@ const Nav = styled.div`
 			border-bottom: 3px double transparent;
 			padding: 3px;
 		}
-		a {
-			width: 100%;
-			text-decoration: none;
-			color: black
-		}
-		a:visited {
-			color: black;
-		}
 		li:hover {
 			border-top: 3px double black;
 			border-bottom: 3px double black;
+		}
+		a {
+			width: 100%;
 		}
 	}
 `

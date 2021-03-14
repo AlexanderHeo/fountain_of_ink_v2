@@ -56,7 +56,6 @@ const Module = styled.div`
 	.section-button-container:hover .button-overlay {
 		background-color: rgb(20, 20, 20);
 		color: rgb(240, 240, 240);
-		transform: scale(1.1)
 	}
 	.section-button-container .button-text {
 		text-align: center;

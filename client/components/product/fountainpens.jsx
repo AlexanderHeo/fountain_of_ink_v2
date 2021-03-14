@@ -16,15 +16,15 @@ class FountainPens extends Component {
 	}
 
 	render() {
-	  let buttonOneProps = { button: 'Demonstrator' }
-	  let buttonTwoProps = { button: 'Flex & Soft Nibs' }
-	  let buttonThreeProps = { button: 'Broad and Stub Nibs' }
-	  let buttonFourProps = { button: 'Limited and Special Editions' }
+	  let buttonOneProps = { button: 'Demonstrator', linkTo: 'fountainpens/demonstrator' }
+	  let buttonTwoProps = { button: 'Flex & Soft Nibs', linkTo: 'fountainpens/flex' }
+	  let buttonThreeProps = { button: 'Broad and Stub Nibs', linkTo: 'fountainpens/stub' }
+	  let buttonFourProps = { button: 'Limited and Special Editions', linkTo: 'fountainpens/limited' }
 	  const button = { buttonOneProps, buttonTwoProps, buttonThreeProps, buttonFourProps }
-	  buttonOneProps = { button: 'Beginners' }
-	  buttonTwoProps = { button: 'Mid Level' }
-	  buttonThreeProps = { button: 'High End' }
-	  buttonFourProps = { button: 'Unique' }
+	  buttonOneProps = { button: 'Beginners', linkTo: 'fountainpens/beginners' }
+	  buttonTwoProps = { button: 'Mid Level', linkTo: 'fountainpens/mid' }
+	  buttonThreeProps = { button: 'High End', linkTo: 'fountainpens/high' }
+	  buttonFourProps = { button: 'Unique', linkTo: 'fountainpens/unique' }
 	  const button2 = { buttonOneProps, buttonTwoProps, buttonThreeProps, buttonFourProps }
 	  return (
 	    <Container className={this.state.mounted ? 'container mount' : 'container'}>
