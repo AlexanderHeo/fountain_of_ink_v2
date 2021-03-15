@@ -1,18 +1,25 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import Sample from '../../../server/public/images/samplepic.jpg'
 import ButtonsModule from '../UI/buttonsModule'
 
 class FountainPens extends Component {
 	state = {
-	  mounted: false
+	  mounted: false,
+	  data: []
 	}
 
-	componentDidMount = () => {
+	componentDidMount = async () => {
 	  window.scrollTo(0, 0)
 	  setTimeout(() => {
 	    this.setState({ mounted: true })
 	  }, 0)
+	  try {
+	    const response = await fetch('/api/pens')
+	    const data = await response.json()
+	    if (data) this.setState({ data: data })
+	  } catch (err) { console.error(err) }
 	}
 
 	render() {
@@ -33,7 +40,11 @@ class FountainPens extends Component {
 	        <div className='product-image-button-container'>
 	          <div className='product-image-button-text'>Fountain Pens</div>
 	          <div className='product-image-button-description'>Shop our diverse and extensive catalog of fountain pens.</div>
-	        	<button className='product-image-button button'>See All Fountain Pens</button>
+	        	<Link to={{
+	            pathname: '/fountainpens/all',
+	            state: this.state.data
+	          }} className='product-image-button button'
+	          >See All Fountain Pens</Link>
 	        </div>
 	      </div>
 	      <ButtonsModule button={button} title='Shop by Style' />
@@ -77,5 +88,13 @@ const Container = styled.div`
 		border: 1px solid black;
 		border-radius: 0.3rem;
 		padding: 1.5rem 1rem;
+	}
+	a {
+		transition: transform 0.2s ease-in;
+	}
+	a:hover {
+		background-color: rgb(20, 20, 20);
+		color: rgb(240, 240, 240);
+		transform: scale(1.1);
 	}
 `
