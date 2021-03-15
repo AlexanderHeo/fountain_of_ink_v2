@@ -19,6 +19,29 @@ app.get('/api/health-check', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.get('/api/pens', (req, res, next) => {
+  const sql = `
+		SELECT "p"."name",
+		"b"."name" as "brand",
+		"c"."name" as "category",
+		"s"."name" as "sale",
+		"p"."price",
+		"p"."colors",
+		"p"."penId" as "id"
+		FROM "pens" as "p"
+		LEFT JOIN "brand" as "b" using ("brandId")
+		LEFT JOIN "category" as "c" using ("categoryId")
+		LEFT JOIN "sales" as "s" using ("salesId")
+		ORDER BY "penId" DESC;
+	`
+  db.query(sql)
+    .then(result => {
+      if (!result) return next(new ClientError('Internal error - code333', 400))
+      res.json(result.rows)
+    })
+    .catch(err => next(err))
+})
+
 app.use('/api', (req, res, next) => {
   next(new ClientError(`cannot ${req.method} ${req.originalUrl}`, 404));
 });
