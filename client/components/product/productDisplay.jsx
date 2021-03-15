@@ -5,26 +5,35 @@ import ProductDisplayList from './productDisplaylist'
 
 class ProductDisplay extends Component {
 	state = {
-	  mounted: false
+	  mounted: false,
+	  data: []
 	}
 
-	componentDidMount = () => {
+	componentDidMount = async () => {
 	  window.scrollTo(0, 0)
 	  setTimeout(() => {
 	    this.setState({ mounted: true })
 	  }, 0)
+	  const { pathname } = this.props.location
+	  const category = pathname.split('/')[1]
+	  const parameter = pathname.split('/')[2]
+	  const init = {
+	    method: 'GET',
+	    header: { 'Content-Type': 'application/json' }
+	  }
+	  const response = await fetch(`/api/${category}/${parameter}`, init)
+	  const data = await response.json()
+	  if (data) this.setState({ data: data })
 	}
 
 	render() {
-	  const { location } = this.props
-	  // console.log(location)
 	  return (
 	    <Container className={this.state.mounted ? 'container mount' : 'container'}>
 	      <div className='product-image-container'>
 	        <img className='product-image' src={`/${Picture}`} />
 	      </div>
 	      <div className='product-display-list'>
-	        { location.state.map(x => {
+	        { this.state.data.map(x => {
 	          return <ProductDisplayList key={x.id} props={x} />
 	        })}
 	      </div>

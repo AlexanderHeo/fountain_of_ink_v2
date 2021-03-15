@@ -41,8 +41,7 @@ class FountainPens extends Component {
 	          <div className='product-image-button-text'>Fountain Pens</div>
 	          <div className='product-image-button-description'>Shop our diverse and extensive catalog of fountain pens.</div>
 	        	<Link to={{
-	            pathname: '/fountainpens/all',
-	            state: this.state.data
+	            pathname: '/fountainpens/all'
 	          }} className='product-image-button button'
 	          >See All Fountain Pens</Link>
 	        </div>
