@@ -21,11 +21,6 @@ SET row_security = off;
 --
 
 COPY public.brand ("brandId", name) FROM stdin;
-1	Pilot
-2	Sailor
-3	Lamy
-4	Faber-Castell
-5	Moonman
 \.
 
 
@@ -42,16 +37,49 @@ COPY public.category ("categoryId", name) FROM stdin;
 
 
 --
--- Data for Name: sales; Type: TABLE DATA; Schema: public; Owner: dev
+-- Data for Name: homepage; Type: TABLE DATA; Schema: public; Owner: dev
 --
 
-COPY public.sales ("salesId", name) FROM stdin;
+COPY public.homepage ("homepageId", name) FROM stdin;
 1	arrival
 2	staffpick
 3	popular
-4	beginner
-5	mid
-6	high
+\.
+
+
+--
+-- Data for Name: type; Type: TABLE DATA; Schema: public; Owner: dev
+--
+
+COPY public.type ("typeId", name) FROM stdin;
+1	demonstrator
+2	flex
+3	stub
+4	limited
+5	beginners
+6	novice
+7	advance
+8	unique
+9	bottles
+10	cartridges
+11	samples
+12	swatches
+13	shading
+14	sheening
+15	shimmering
+16	waterresistant
+17	notebook
+18	notebpad
+19	tablet
+20	paperaccessories
+21	converters
+22	nibs
+23	cleaning
+24	tuning
+25	blotters
+26	inkwells
+27	penfilling
+28	storage
 \.
 
 
@@ -59,7 +87,7 @@ COPY public.sales ("salesId", name) FROM stdin;
 -- Data for Name: accessories; Type: TABLE DATA; Schema: public; Owner: dev
 --
 
-COPY public.accessories (id, name, "brandId", type, "categoryId", "salesId", price) FROM stdin;
+COPY public.accessories (id, name, brand, type, category, homepage, price) FROM stdin;
 \.
 
 
@@ -84,18 +112,10 @@ COPY public.colors ("colorId", name) FROM stdin;
 
 
 --
--- Data for Name: homepage; Type: TABLE DATA; Schema: public; Owner: dev
---
-
-COPY public.homepage (category, arrival, staff, popular) FROM stdin;
-\.
-
-
---
 -- Data for Name: inks; Type: TABLE DATA; Schema: public; Owner: dev
 --
 
-COPY public.inks ("inkId", name, "brandId", color, style, type, "categoryId", "salesId", price) FROM stdin;
+COPY public.inks ("inkId", name, brand, color, type, category, homepage, price) FROM stdin;
 \.
 
 
@@ -103,7 +123,7 @@ COPY public.inks ("inkId", name, "brandId", color, style, type, "categoryId", "s
 -- Data for Name: paper; Type: TABLE DATA; Schema: public; Owner: dev
 --
 
-COPY public.paper ("paperId", name, "brandId", type, "categoryId", "salesId", price) FROM stdin;
+COPY public.paper ("paperId", name, brand, type, category, homepage, price) FROM stdin;
 \.
 
 
@@ -111,13 +131,7 @@ COPY public.paper ("paperId", name, "brandId", type, "categoryId", "salesId", pr
 -- Data for Name: pens; Type: TABLE DATA; Schema: public; Owner: dev
 --
 
-COPY public.pens ("penId", name, "brandId", colors, "categoryId", "salesId", price) FROM stdin;
-7	Vanishing Point	1	1,2,3,4,5,6,7,8,9,10,11,12	1	2	160
-8	Eye Dropper	5	12	1	1	20
-9	Al Star	3	1,2,3,4,5,6,7,8,9,10,11,12	1	4	40
-10	Metropolitan	1	1,2,3,4,5,6,7,8,9,10,11,12	1	3	35
-11	Ambition	4	1,2	1	5	80
-12	1911	2	1,2	1	6	200
+COPY public.pens ("penId", name, brand, colors, category, homepage, price, type) FROM stdin;
 \.
 
 
@@ -132,7 +146,7 @@ SELECT pg_catalog.setval('public.accessories_id_seq', 1, false);
 -- Name: brand_brandId_seq; Type: SEQUENCE SET; Schema: public; Owner: dev
 --
 
-SELECT pg_catalog.setval('public."brand_brandId_seq"', 5, true);
+SELECT pg_catalog.setval('public."brand_brandId_seq"', 1, false);
 
 
 --
@@ -147,6 +161,13 @@ SELECT pg_catalog.setval('public."category_categoryId_seq"', 4, true);
 --
 
 SELECT pg_catalog.setval('public."colors_colorId_seq"', 12, true);
+
+
+--
+-- Name: homepage_homepageId_seq; Type: SEQUENCE SET; Schema: public; Owner: dev
+--
+
+SELECT pg_catalog.setval('public."homepage_homepageId_seq"', 3, true);
 
 
 --
@@ -167,14 +188,14 @@ SELECT pg_catalog.setval('public."paper_paperId_seq"', 1, false);
 -- Name: pens_penId_seq; Type: SEQUENCE SET; Schema: public; Owner: dev
 --
 
-SELECT pg_catalog.setval('public."pens_penId_seq"', 12, true);
+SELECT pg_catalog.setval('public."pens_penId_seq"', 1, false);
 
 
 --
--- Name: sales_salesId_seq; Type: SEQUENCE SET; Schema: public; Owner: dev
+-- Name: type_typeId_seq; Type: SEQUENCE SET; Schema: public; Owner: dev
 --
 
-SELECT pg_catalog.setval('public."sales_salesId_seq"', 15, true);
+SELECT pg_catalog.setval('public."type_typeId_seq"', 28, true);
 
 
 --
